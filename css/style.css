@@ -1,41 +1,132 @@
 * {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     list-style: none;
     font-family: "Nanum Gothic", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
+@keyframes wave {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.loading {
+    z-index: 99999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0);
+    transition: opacity 1s ease-out;
+}
+
+.hide {
+    opacity: 0;
+    pointer-events: none;
+    /* 클릭 방지 */
+}
+
+.loading div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    transform: translate(-50%, -50%);
+}
+
+.loading div img {
+    width: 100%;
+}
+
+.loading span {
+    display: inline-block;
+    animation: wave 1s infinite ease-in-out;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+.loading span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.loading span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.loading span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.loading span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.loading span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.loading span:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+.loading span:nth-child(7) {
+    animation-delay: 0.6s;
+}
+
+.loading span:nth-child(8) {
+    animation-delay: 0.7s;
+}
+
+.loading span:nth-child(9) {
+    animation-delay: 0.8s;
+}
+
 .mask {
     display: none;
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     z-index: 99999;
-    width:100vw;
-    height:100vh;
-    background:rgba(0,0,0,0.8);
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .mask .modal {
-    padding:40px;
+    padding: 40px;
     box-sizing: border-box;
-    position:absolute;
-    top:50%;
-    left:50%;
-    background:#fff;
-    width:500px;
-    height:200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    width: 500px;
+    height: 200px;
     transform: translate(-50%, -50%);
-    border-radius: 10px;;
+    border-radius: 10px;
+    ;
     background-image: url('../img/pop_bg.png');
 }
 
 .modal p {
-    color:#333;
+    color: #333;
     font-size: 20px;
-    font-weight: bold;;
+    font-weight: bold;
+    ;
     text-align: center;
 }
 
@@ -47,20 +138,21 @@
 .modal .modal_button button {
     cursor: pointer;
     background-color: #7ec699;
-    border:0;
+    border: 0;
     font-size: 16px;
     width: 100px;
-    padding:10px;
+    padding: 10px;
     border-radius: 10px;
-    color:#fff;
+    color: #fff;
     font-weight: bold;
 }
 
 .modal .modal_button button.reset {
     background-color: #fff;
     border: 1px solid #7ec699;
-    color:#7ec699;
+    color: #7ec699;
 }
+
 .wrap {
     position: relative;
     width: 100%;
@@ -70,7 +162,7 @@
 }
 
 .section {
-    width:100%;
+    width: 100%;
     box-sizing: border-box;
     padding-top: 70px;
     padding-left: 45px;
@@ -78,28 +170,29 @@
     align-items: center;
     justify-content: center;
 }
+
 .content_wrap {
-    position:absolute;
-    top:50%;
+    position: absolute;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width:1920px;
+    width: 1920px;
 }
 
 .content .main_img {
     z-index: 0;
-    position:absolute;
-    top:362px;
-    left:620px;
+    position: absolute;
+    top: 362px;
+    left: 620px;
     width: 100px;
     height: 100px;
 }
 
 .content .main_img2 {
     z-index: 0;
-    position:absolute;
-    top:57px;
-    left:10px;
+    position: absolute;
+    top: 57px;
+    left: 10px;
     width: 100px;
     height: 100px;
 }
@@ -107,40 +200,42 @@
 
 .content .main_img3 {
     z-index: 1;
-    position:absolute;
-    top:-15px;
-    left:547px;
+    position: absolute;
+    top: -15px;
+    left: 547px;
     width: 100px;
     height: 100px;
 }
+
 .content .main_img4 {
     z-index: -1;
-    position:absolute;
-    top:50px;
-    left:170px;
-    width:400px;
+    position: absolute;
+    top: 50px;
+    left: 170px;
+    width: 400px;
     height: 400px;
 }
+
 .content .main_img5 {
     z-index: 1;
-    position:absolute;
-    top:290px;
-    left:15px;
+    position: absolute;
+    top: 290px;
+    left: 15px;
     width: 100px;
     height: 100px;
 }
 
 .container {
     box-sizing: border-box;
-    position:relative;
+    position: relative;
     display: inline-block;
     width: 100%;
-    overflow:hidden;
-    padding:50px 38px;
+    overflow: hidden;
+    padding: 50px 38px;
 }
 
 .container h1 {
-    color:#333;
+    color: #333;
     position: relative;
     padding-left: 90px;
     font-size: 45px;
@@ -150,19 +245,20 @@
 .container h1::before {
     content: "";
     position: absolute;
-    top:8px;
-    left:30px;
-    width: 50px; /* 이미지 크기 */
+    top: 8px;
+    left: 30px;
+    width: 50px;
+    /* 이미지 크기 */
     height: 50px;
     background-repeat: no-repeat;
     background-image: url('../img/headline_icon.png');
 }
 
 .content {
-    z-index:0;
-    width:50%;
+    z-index: 0;
+    width: 50%;
     box-sizing: border-box;
-    height:500px;
+    height: 500px;
     position: relative;
     background: url('../img/sky.png') no-repeat;
     background-size: contain;
@@ -172,12 +268,12 @@
 .content input {
     text-align: center;
     font-weight: bold;
-    font-size:24px;
+    font-size: 24px;
     width: 75px;
     height: 75px;
     border-radius: 5px;
     box-sizing: border-box;
-    border:1px solid #ccc;
+    border: 1px solid #ccc;
     outline: none;
     transition: color 0.5s ease-in-out;
 }
@@ -197,221 +293,234 @@
 
 .content label[for="quiz1"] {
     display: flex;
-    position:absolute;
+    position: absolute;
     flex-direction: column;
-    top:0;
-    left:100px;
-}
-.content label[for="quiz2"]  {
-    display: flex;
-    position:absolute;
-    top:75px;
-    left:100px;
+    top: 0;
+    left: 100px;
 }
 
-.content label[for="quiz3"]  {
+.content label[for="quiz2"] {
     display: flex;
-    position:absolute;
-    top:150px;
-    left:25px;
+    position: absolute;
+    top: 75px;
+    left: 100px;
 }
 
-.content label[for="quiz4"]  {
+.content label[for="quiz3"] {
     display: flex;
-    position:absolute;
-    top:75px;
-    left:485px;
+    position: absolute;
+    top: 150px;
+    left: 25px;
 }
 
-.content label[for="quiz5"]  {
+.content label[for="quiz4"] {
     display: flex;
-    position:absolute;
+    position: absolute;
+    top: 75px;
+    left: 485px;
+}
+
+.content label[for="quiz5"] {
+    display: flex;
+    position: absolute;
     flex-direction: column;
-    top:0;
-    left:485px;
+    top: 0;
+    left: 485px;
 }
 
 
-.content label[for="quiz6"]  {
+.content label[for="quiz6"] {
     display: flex;
-    position:absolute;
+    position: absolute;
     flex-direction: column;
-    top:0;
-    left:635px;
+    top: 0;
+    left: 635px;
 }
 
-.content label[for="quiz7"]  {
+.content label[for="quiz7"] {
     display: flex;
-    position:absolute;
-    top:385px;
-    left:25px;
+    position: absolute;
+    top: 385px;
+    left: 25px;
 }
 
-.content label[for="quiz8"]  {
+.content label[for="quiz8"] {
     display: flex;
-    position:absolute;
+    position: absolute;
     flex-direction: column;
-    top:385px;
-    left:100px;
+    top: 385px;
+    left: 100px;
 }
 
-.content label[for="quiz9"]  {
+.content label[for="quiz9"] {
     display: flex;
-    position:absolute;
-    top:455px;
-    left:480px;
+    position: absolute;
+    top: 455px;
+    left: 480px;
 }
 
-.content label[for="quiz10"]  {
+.content label[for="quiz10"] {
     display: flex;
-    position:absolute;
+    position: absolute;
     flex-direction: column;
-    top:305px;
-    left:705px;
+    top: 305px;
+    left: 705px;
 }
 
 
-.content label[for="quiz11"]  {
+.content label[for="quiz11"] {
     display: flex;
-    position:absolute;
+    position: absolute;
     top: 225px;
-    left:260px;
+    left: 260px;
 }
 
-.content label[for="quiz12"]  {
+.content label[for="quiz12"] {
     display: flex;
-    position:absolute;
+    position: absolute;
     flex-direction: column;
-    top:225px;
-    left:260px;
+    top: 225px;
+    left: 260px;
 }
 
-.content label[for="quiz13"]  {
+.content label[for="quiz13"] {
     display: flex;
-    position:absolute;
+    position: absolute;
     flex-direction: column;
-    top:155px;
-    left:410px;
+    top: 155px;
+    left: 410px;
 }
 
 .content label[for="quiz1"]::before {
-    z-index:9999;
+    z-index: 9999;
     content: "";
     position: absolute;
     left: -7px;
-    top:-7px;
-    width: 26px; /* 이미지 크기 */
+    top: -7px;
+    width: 26px;
+    /* 이미지 크기 */
     height: 26px;
     background: url("../img/v_1.png") no-repeat center;
     background-size: contain;
 }
+
 .content label[for="quiz2"]::before {
-    z-index:9999;
+    z-index: 9999;
     content: "";
     position: absolute;
     left: -7px;
-    top:-7px;
-    width: 26px; /* 이미지 크기 */
+    top: -7px;
+    width: 26px;
+    /* 이미지 크기 */
     height: 26px;
     background: url("../img/h_1.png") no-repeat center;
     background-size: contain;
 }
 
 .content label[for="quiz3"]::before {
-    z-index:9999;
+    z-index: 9999;
     content: "";
     position: absolute;
     left: -7px;
-    top:-7px;
-    width: 26px; /* 이미지 크기 */
+    top: -7px;
+    width: 26px;
+    /* 이미지 크기 */
     height: 26px;
     background: url("../img/h_2.png") no-repeat center;
     background-size: contain;
 }
 
 .content label[for="quiz4"]::before {
-    z-index:9999;
+    z-index: 9999;
     content: "";
     position: absolute;
     left: -7px;
-    top:-7px;
-    width: 26px; /* 이미지 크기 */
+    top: -7px;
+    width: 26px;
+    /* 이미지 크기 */
     height: 26px;
     background: url("../img/h_3.png") no-repeat center;
     background-size: contain;
 }
 
 .content label[for="quiz5"]::before {
-    z-index:9999;
+    z-index: 9999;
     content: "";
     position: absolute;
     left: -7px;
-    top:-7px;
-    width: 26px; /* 이미지 크기 */
+    top: -7px;
+    width: 26px;
+    /* 이미지 크기 */
     height: 26px;
     background: url("../img/v_2.png") no-repeat center;
     background-size: contain;
 }
 
 .content label[for="quiz6"]::before {
-    z-index:9999;
+    z-index: 9999;
     content: "";
     position: absolute;
     left: -7px;
-    top:-7px;
-    width: 26px; /* 이미지 크기 */
+    top: -7px;
+    width: 26px;
+    /* 이미지 크기 */
     height: 26px;
     background: url("../img/v_3.png") no-repeat center;
     background-size: contain;
 }
 
 .content label[for="quiz7"]::before {
-    z-index:9999;
+    z-index: 9999;
     content: "";
     position: absolute;
     left: -7px;
-    top:-7px;
-    width: 26px; /* 이미지 크기 */
+    top: -7px;
+    width: 26px;
+    /* 이미지 크기 */
     height: 26px;
     background: url("../img/h_4.png") no-repeat center;
     background-size: contain;
 }
 
 .content label[for="quiz8"]::before {
-    z-index:9999;
+    z-index: 9999;
     content: "";
     position: absolute;
     left: -7px;
-    top:-7px;
-    width: 26px; /* 이미지 크기 */
+    top: -7px;
+    width: 26px;
+    /* 이미지 크기 */
     height: 26px;
     background: url("../img/v_4.png") no-repeat center;
     background-size: contain;
 }
 
 .content label[for="quiz9"]::before {
-    z-index:9999;
+    z-index: 9999;
     content: "";
     position: absolute;
     left: -7px;
-    top:-7px;
-    width: 26px; /* 이미지 크기 */
+    top: -7px;
+    width: 26px;
+    /* 이미지 크기 */
     height: 26px;
     background: url("../img/h_5.png") no-repeat center;
     background-size: contain;
 }
 
 .content label[for="quiz10"]::before {
-    z-index:9999;
+    z-index: 9999;
     content: "";
     position: absolute;
     left: -7px;
-    top:-7px;
-    width: 26px; /* 이미지 크기 */
+    top: -7px;
+    width: 26px;
+    /* 이미지 크기 */
     height: 26px;
     background: url("../img/v_5.png") no-repeat center;
     background-size: contain;
 }
+
 .horizontal {
     border-radius: 20px;
     position: relative;
@@ -419,9 +528,11 @@
     border: 4px dotted #F4A1A7;
     margin-bottom: 40px;
 }
+
 .question_wrap ul {
     padding: 20px;
 }
+
 .q_title {
     background-image: url('../img/gold_key.png');
     background-repeat: no-repeat;
@@ -430,10 +541,10 @@
     position: absolute;
     background-color: #fff;
     font-weight: bold;
-    font-size:40px;
-    top:-30px;
-    left:40px;
-    padding:0 10px 0 55px;
+    font-size: 40px;
+    top: -30px;
+    left: 40px;
+    padding: 0 10px 0 55px;
 }
 
 .vertical {
@@ -442,132 +553,154 @@
     padding: 20px;
     border: 4px dotted #7ec699;
 }
+
 .question_wrap {
-    color:#333;
+    color: #333;
     box-sizing: border-box;
     width: 50%;
 }
+
 .question_wrap li {
-    color:#333;
+    color: #333;
     line-height: 30px;
     letter-spacing: -0.02em;
     font-size: 25px;
     margin-bottom: 10px;
     padding-left: 35px;
-    position:relative;
+    position: relative;
 }
 
 .question_wrap li:last-child {
-    margin-bottom:0;
+    margin-bottom: 0;
 }
 
-.horizontal > ul > li:nth-child(1)::before  {
+.horizontal>ul>li:nth-child(1)::before {
     content: "";
     position: absolute;
     left: 0;
-    top:5px;
-    width: 25px; /* 이미지 크기 */
+    top: 5px;
+    width: 25px;
+    /* 이미지 크기 */
     height: 25px;
     background: url("../img/h_1.png") no-repeat center;
     background-size: contain;
 }
-.horizontal > ul > li:nth-child(2)::before  {
+
+.horizontal>ul>li:nth-child(2)::before {
     content: "";
     position: absolute;
     left: 0;
-    top:5px;
-    width: 25px; /* 이미지 크기 */
+    top: 5px;
+    width: 25px;
+    /* 이미지 크기 */
     height: 25px;
     background: url("../img/h_2.png") no-repeat center;
     background-size: contain;
 }
-.horizontal > ul > li:nth-child(3)::before  {
+
+.horizontal>ul>li:nth-child(3)::before {
     content: "";
     position: absolute;
     left: 0;
-    top:5px;
-    width: 25px; /* 이미지 크기 */
+    top: 5px;
+    width: 25px;
+    /* 이미지 크기 */
     height: 25px;
     background: url("../img/h_3.png") no-repeat center;
     background-size: contain;
 }
-.horizontal > ul > li:nth-child(4)::before  {
+
+.horizontal>ul>li:nth-child(4)::before {
     content: "";
     position: absolute;
     left: 0;
-    top:5px;
-    width: 25px; /* 이미지 크기 */
+    top: 5px;
+    width: 25px;
+    /* 이미지 크기 */
     height: 25px;
     background: url("../img/h_4.png") no-repeat center;
     background-size: contain;
 }
-.horizontal > ul > li:nth-child(5)::before  {
+
+.horizontal>ul>li:nth-child(5)::before {
     content: "";
     position: absolute;
     left: 0;
-    top:5px;
-    width: 25px; /* 이미지 크기 */
+    top: 5px;
+    width: 25px;
+    /* 이미지 크기 */
     height: 25px;
     background: url("../img/h_5.png") no-repeat center;
     background-size: contain;
 }
-.horizontal > ul > li:nth-child(6)::before  {
+
+.horizontal>ul>li:nth-child(6)::before {
     content: "";
     position: absolute;
     left: 0;
-    top:5px;
-    width: 25px; /* 이미지 크기 */
+    top: 5px;
+    width: 25px;
+    /* 이미지 크기 */
     height: 25px;
     background: url("../img/h_6.png") no-repeat center;
     background-size: contain;
 }
 
-.vertical > ul > li:nth-child(1)::before  {
+.vertical>ul>li:nth-child(1)::before {
     content: "";
     position: absolute;
     left: 0;
-    top:5px;
-    width: 25px; /* 이미지 크기 */
+    top: 5px;
+    width: 25px;
+    /* 이미지 크기 */
     height: 25px;
     background: url("../img/v_1.png") no-repeat center;
     background-size: contain;
 }
-.vertical > ul > li:nth-child(2)::before  {
+
+.vertical>ul>li:nth-child(2)::before {
     content: "";
     position: absolute;
     left: 0;
-    top:5px;
-    width: 25px; /* 이미지 크기 */
+    top: 5px;
+    width: 25px;
+    /* 이미지 크기 */
     height: 25px;
     background: url("../img/v_2.png") no-repeat center;
     background-size: contain;
 }
-.vertical > ul > li:nth-child(3)::before  {
+
+.vertical>ul>li:nth-child(3)::before {
     content: "";
     position: absolute;
     left: 0;
-    top:5px;
-    width: 25px; /* 이미지 크기 */
+    top: 5px;
+    width: 25px;
+    /* 이미지 크기 */
     height: 25px;
     background: url("../img/v_3.png") no-repeat center;
     background-size: contain;
 }
-.vertical > ul > li:nth-child(4)::before  {
+
+.vertical>ul>li:nth-child(4)::before {
     content: "";
     position: absolute;
     left: 0;
-    top:5px;
-    width: 25px; /* 이미지 크기 */
+    top: 5px;
+    width: 25px;
+    /* 이미지 크기 */
     height: 25px;
     background: url("../img/v_4.png") no-repeat center;
     background-size: contain;
 }
-.vertical > ul > li:nth-child(5)::before  {
+
+.vertical>ul>li:nth-child(5)::before {
     content: "";
     position: absolute;
     left: 0;
-    top:5px;
-    width: 25px; /* 이미지 크기 */
+    top: 5px;
+    width: 25px;
+    /* 이미지 크기 */
     height: 25px;
     background: url("../img/v_5.png") no-repeat center;
     background-size: contain;

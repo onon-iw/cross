@@ -3,6 +3,11 @@ import { answer, checkComplete, sync } from './config.js';
 import { handleClick } from './eventHandler.js';
 
 document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => {
+        document.querySelector(".loading").classList.add('hide');
+    }, 1500);
+
+
     const inputs = document.querySelectorAll('input');
    
     sync.forEach(item => {
@@ -96,14 +101,5 @@ document.addEventListener("DOMContentLoaded", function () {
        window.addEventListener("resize", viewScaler.setScale); 
     }
 
-    function resetQuiz() {
-        Object.keys(checkComplete).forEach(key => {
-            checkComplete[key] = false;
-            inputs.forEach(item => {
-                item.classList.remove('finish');
-                item.value = '';
-                item.style.color = '#000';
-            })
-        })
-    }
+
 });
